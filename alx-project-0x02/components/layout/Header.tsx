@@ -10,10 +10,9 @@ export default function Header() {
           <Link href="/">ALX Project 2</Link>
         </h1>
         <nav className="space-x-4">
-          <Link href="/" className="hover:underline">Home</Link>
+          <Link href="/" className="hover:underline">Index</Link>
+          <Link href="/home" className="hover:underline">Home</Link>
           <Link href="/about" className="hover:underline">About</Link>
-          <Link href="/posts" className="hover:underline">Posts</Link>
-          <Link href="/users" className="hover:underline">Users</Link>
         </nav>
       </div>
     </header>
