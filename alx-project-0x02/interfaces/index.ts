@@ -15,3 +15,9 @@ export interface Post {
   createdAt: string
   updatedAt?: string
 }
+
+// 👇 Add this interface for the Card component
+export interface CardProps {
+  title: string
+  content: string
+}
