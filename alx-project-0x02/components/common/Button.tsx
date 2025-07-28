@@ -1,6 +1,6 @@
 // components/common/Button.tsx
 
-import { ButtonProps } from '@/interfaces'
+import { type ButtonProps } from '@/interfaces'
 
 export default function Button({ size, shape, children, onClick }: ButtonProps) {
   const sizeClasses = {
