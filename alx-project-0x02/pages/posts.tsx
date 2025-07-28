@@ -4,6 +4,7 @@ import React from 'react'
 import { GetStaticProps } from 'next'
 import PostCard from '@/components/common/PostCard'
 import { PostProps } from '@/interfaces'
+import Header from '@/components/layout/Header'
 
 interface PostsPageProps {
   posts: PostProps[]
