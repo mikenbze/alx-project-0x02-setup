@@ -7,9 +7,7 @@ import Header from '@/components/layout/Header'
 export default function AboutPage() {
   return (
     <>
-      <Head>
-        <title>About</title>
-      </Head>
+     <Header />
       <main className="p-8 text-center">
         <h1 className="text-4xl font-bold mb-8">About Us</h1>
 
