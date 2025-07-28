@@ -1,11 +1,11 @@
 
 // pages/home.tsx
 
+import Header from '@/components/layout/Header'
 import Head from 'next/head'
 import { useState } from 'react'
 import Card from '@/components/common/Card'
 import PostModal from '@/components/common/PostModal'
-import Header from '@/components/layout/Header'
 
 interface Post {
   title: string
