@@ -1,31 +1,55 @@
+
 // pages/home.tsx
 
 import Head from 'next/head'
+import { useState } from 'react'
 import Card from '@/components/common/Card'
+import PostModal from '@/components/common/PostModal'
+
+interface Post {
+  title: string
+  content: string
+}
 
 export default function HomePage() {
+  const [posts, setPosts] = useState<Post[]>([])
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const handleAddPost = (title: string, content: string) => {
+    const newPost = { title, content }
+    setPosts((prev) => [newPost, ...prev])
+  }
+
   return (
     <>
       <Head>
         <title>Home</title>
       </Head>
       <main className="p-8">
-        <h1 className="text-4xl font-bold text-center mb-8">Welcome to the Home Page</h1>
+        <h1 className="text-4xl font-bold text-center mb-6">Welcome to the Home Page</h1>
 
-        <Card
-          title="Learn Next.js"
-          content="Next.js is a powerful React framework for building server-side rendered applications."
+        <div className="flex justify-center mb-8">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700"
+          >
+            Add New Post
+          </button>
+        </div>
+
+        <PostModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          onSubmit={handleAddPost}
         />
 
-        <Card
-          title="Explore Tailwind CSS"
-          content="Tailwind CSS helps you build modern, responsive UIs without leaving your HTML."
-        />
-
-        <Card
-          title="Build with TypeScript"
-          content="TypeScript brings type safety and developer efficiency to your JavaScript code."
-        />
+        {posts.length === 0 ? (
+          <p className="text-center text-gray-500">No posts yet.</p>
+        ) : (
+          posts.map((post, index) => (
+            <Card key={index} title={post.title} content={post.content} />
+          ))
+        )}
       </main>
     </>
   )
