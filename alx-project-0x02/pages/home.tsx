@@ -23,8 +23,8 @@ export default function HomePage() {
 
   return (
     <>
-  
-      <main className="p-8">
+  <Header />
+  <main className="p-8">
         <h1 className="text-4xl font-bold text-center mb-6">Welcome to the Home Page</h1>
 
         <div className="flex justify-center mb-8">
