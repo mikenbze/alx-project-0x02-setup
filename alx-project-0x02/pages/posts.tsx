@@ -15,7 +15,7 @@
 
 
 // pages/posts.tsx
-
+import { GetStaticProps } from 'next'
 import { useEffect, useState } from 'react'
 import PostCard from '@/components/common/PostCard'
 import { PostProps } from '@/interfaces'
