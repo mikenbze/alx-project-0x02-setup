@@ -13,6 +13,7 @@ interface PostsPageProps {
 const PostsPage: React.FC<PostsPageProps> = ({ posts }) => {
   return (
     <div className="p-4">
+	 <Header />
       <h1 className="text-2xl font-bold mb-4">Posts</h1>
       {posts.map(post => (
         <PostCard key={post.id} {...post} />
