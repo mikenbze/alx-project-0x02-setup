@@ -23,7 +23,7 @@ export default function HomePage() {
 
   return (
     <>
-    <Header />
+  
       <main className="p-8">
         <h1 className="text-4xl font-bold text-center mb-6">Welcome to the Home Page</h1>
 
